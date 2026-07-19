@@ -1,0 +1,32 @@
+/* Body aur layout setup */
+body { 
+    background-color: black; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0; 
+    font-family: sans-serif; 
+}
+.calculator { width: 320px; padding: 20px; }
+.top-menu { color: #FF9F0A; font-size: 30px; margin-bottom: 20px; cursor: pointer; }
+.display { color: white; font-size: 70px; text-align: right; margin-bottom: 20px; }
+
+/* Grid layout for buttons */
+.buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+
+/* General button styling */
+button {
+    height: 65px; 
+    border-radius: 50%; 
+    border: none; 
+    font-size: 24px;
+    color: white; 
+    background-color: #333333; 
+    cursor: pointer;
+}
+
+/* Specific colors */
+.operator { background-color: #FF9F0A; } /* Orange operators */
+.sci-btn { background-color: #555555; font-size: 16px; } /* Scientific buttons style */
+.function-btn { background-color: #a5a5a5; color: black; } /* Light grey for AC, etc. */
