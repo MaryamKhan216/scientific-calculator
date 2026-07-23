@@ -30,3 +30,25 @@ button {
 .operator { background-color: #FF9F0A; } /* Orange operators */
 .sci-btn { background-color: #555555; font-size: 16px; } /* Scientific buttons style */
 .function-btn { background-color: #a5a5a5; color: black; } /* Light grey for AC, etc. */
+/* Responsive Design */
+.calculator {
+    width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .calculator {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .display {
+        font-size: 50px;
+    }
+
+    button {
+        height: 55px;
+        font-size: 20px;
+    }
+}
