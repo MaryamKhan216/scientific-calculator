@@ -1,7 +1,7 @@
 // Display aur scientific grid ko select karein
 const display = document.querySelector('.display');
 const sciGrid = document.getElementById("scientific-grid");
-
+let history = [];
 // Har button par click event listener lagayein
 document.querySelectorAll('button').forEach(button => {
     button.addEventListener('click', () => {
@@ -10,21 +10,30 @@ document.querySelectorAll('button').forEach(button => {
         // Scientific toggle ka button (keyboard icon)
         if (value === '⌨') {
             sciGrid.style.display = (sciGrid.style.display === "none" || sciGrid.style.display === "") ? "grid" : "none";
-        } 
+        }
+            // History button
+else if (value === '☰') {
+    alert(history.join("\n") || "No History");
+}
         // AC button: Sab clear karne ke liye
         else if (value === 'AC') {
-            display.innerText = '0';
-        } 
+    display.innerText = '0';
+    history = [];
+}
         // = button: Calculation karne ke liye
         else if (value === '=') {
             try {
                 // × aur ÷ ko computer friendly symbols mein badalna
-                let expression = display.innerText.replace('×', '*').replace('÷', '/');
-                display.innerText = eval(expression);
-            } catch {
-                display.innerText = 'Error';
-            }
-        } 
+                else if (value === '=') {
+    try {
+        let expression = display.innerText.replace('×', '*').replace('÷', '/');
+        let result = eval(expression);
+        history.push(expression + " = " + result);
+        display.innerText = result;
+    } catch {
+        display.innerText = 'Error';
+    }
+}
         // Numbers aur baki operators
         else {
             if (display.innerText === '0') {
